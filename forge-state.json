@@ -1,0 +1,30 @@
+{
+  "project_dir": "/Users/anshul/Anshul/Code/github-wrapped",
+  "started_at": "2026-03-06T15:30:00Z",
+  "model": "claude-sonnet-4-20250514",
+  "requirements_doc": "REQUIREMENTS.md",
+  "status": "wave_1",
+  "current_wave": 1,
+  "project_initialized": true,
+  "scaffolded": true,
+  "phases": {},
+  "services_needed": [],
+  "mock_registry": {},
+  "skipped_items": [],
+  "credentials": {},
+  "human_guidance": {},
+  "spec_compliance": {
+    "total_requirements": 0,
+    "verified": 0,
+    "gap_history": [],
+    "rounds_completed": 0
+  },
+  "remaining_gaps": [],
+  "uat_results": {
+    "status": "not_started",
+    "workflows_tested": 0,
+    "workflows_passed": 0,
+    "workflows_failed": 0
+  },
+  "total_budget_used": 0
+}

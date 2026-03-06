@@ -1,0 +1,12 @@
+{
+  "model": "claude-sonnet-4-20250514",
+  "max_budget_total": 50,
+  "max_budget_per_phase": 15,
+  "max_budget_per_step": 3,
+  "max_retries": 3,
+  "testing": {
+    "framework": "vitest",
+    "unit_command": "npx vitest run",
+    "typecheck_command": "npx tsc --noEmit"
+  }
+}
