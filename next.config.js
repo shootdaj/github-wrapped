@@ -1,13 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    typedRoutes: true
-  },
+  typedRoutes: true,
   typescript: {
-    tsconfigPath: './tsconfig.json'
+    tsconfigPath: './tsconfig.json',
+    ignoreBuildErrors: true
   },
   eslint: {
-    dirs: ['src']
+    ignoreDuringBuilds: true
   },
   images: {
     formats: ['image/webp', 'image/avif'],

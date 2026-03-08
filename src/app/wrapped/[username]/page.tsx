@@ -5,12 +5,12 @@ import { githubDataClient } from '../../../lib/api-client'
 import { useAPIError } from '../../../hooks/useAPIError'
 import { LoadingSpinner, SkeletonLoader } from '../../../components/loading'
 import { APIErrorDisplay } from '../../../components/error/APIErrorDisplay'
-import ActivityStats from '../../../components/stats/ActivityStats'
-import LanguageBreakdown from '../../../components/stats/LanguageBreakdown'
+import { ActivityStats as ActivityStatsComponent } from '../../../components/stats/ActivityStats'
+import { LanguageBreakdown as LanguageBreakdownComponent } from '../../../components/stats/LanguageBreakdown'
 import TopRepositories from '../../../components/repositories/TopRepositories'
 import ContributionHeatmap from '../../../components/visualization/ContributionHeatmap'
 import ShareableCard from '../../../components/sharing/ShareableCard'
-import type { GitHubUser, GitHubRepository, ActivityStats as ActivityStatsType, LanguageBreakdown as LanguageBreakdownType, TopRepository, ContributionDay } from '../../../types/github-api'
+import type { GitHubUser, GitHubRepository, ActivityStats, LanguageBreakdown, TopRepository, ContributionDay } from '../../../types/github-api'
 
 interface WrappedPageProps {
   params: Promise<{
@@ -26,8 +26,8 @@ export default function WrappedPage({ params }: WrappedPageProps) {
   const [data, setData] = useState<{
     user: GitHubUser
     repositories: GitHubRepository[]
-    activityStats: ActivityStatsType
-    languageBreakdown: LanguageBreakdownType[]
+    activityStats: ActivityStats
+    languageBreakdown: LanguageBreakdown[]
     topRepositories: TopRepository[]
     contributionData: ContributionDay[]
   } | null>(null)
@@ -143,12 +143,12 @@ export default function WrappedPage({ params }: WrappedPageProps) {
         <div className="space-y-16 md:space-y-24">
           {/* Activity Stats */}
           <section className="w-full">
-            <ActivityStats stats={data.activityStats} />
+            <ActivityStatsComponent stats={data.activityStats} />
           </section>
 
           {/* Language Breakdown */}
           <section className="w-full">
-            <LanguageBreakdown languages={data.languageBreakdown} />
+            <LanguageBreakdownComponent languages={data.languageBreakdown} />
           </section>
 
           {/* Top Repositories */}

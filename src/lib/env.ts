@@ -2,17 +2,17 @@ import { z } from 'zod'
 
 // Environment validation schema
 const envSchema = z.object({
-  // GitHub OAuth
-  GITHUB_ID: z.string().min(1, 'GITHUB_ID is required'),
-  GITHUB_SECRET: z.string().min(1, 'GITHUB_SECRET is required'),
+  // GitHub OAuth (optional — app works without auth for public data)
+  GITHUB_ID: z.string().optional(),
+  GITHUB_SECRET: z.string().optional(),
 
-  // NextAuth
-  NEXTAUTH_URL: z.string().url('NEXTAUTH_URL must be a valid URL'),
-  NEXTAUTH_SECRET: z.string().min(32, 'NEXTAUTH_SECRET must be at least 32 characters'),
+  // NextAuth (optional)
+  NEXTAUTH_URL: z.string().optional(),
+  NEXTAUTH_SECRET: z.string().optional(),
 
   // Application
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
-  NEXT_PUBLIC_APP_URL: z.string().url('NEXT_PUBLIC_APP_URL must be a valid URL'),
+  NEXT_PUBLIC_APP_URL: z.string().optional(),
 
   // Optional GitHub token for enhanced rate limits
   GITHUB_TOKEN: z.string().optional(),

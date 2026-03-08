@@ -22,11 +22,11 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
     return { hasError: true, error }
   }
 
-  componentDidCatch(error: Error, errorInfo: any) {
+  override componentDidCatch(error: Error, errorInfo: any) {
     console.error('Error boundary caught error:', error, errorInfo)
   }
 
-  render() {
+  override render() {
     if (this.state.hasError) {
       return this.props.fallback || (
         <div className="min-h-screen flex items-center justify-center">
